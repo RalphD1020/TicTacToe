@@ -1,14 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TileManager : MonoBehaviour
+public class TicTacToeTile : MonoBehaviour
 {
     // Reference to the button
     public Button button;
     public GameObject emptyPrefab;
     public GameObject xPrefab;
     public GameObject oPrefab;
-    private char currentPlayer = 'X';
     
     public void Start()
     {
@@ -18,9 +17,10 @@ public class TileManager : MonoBehaviour
     // Function that gets called when the button is clicked
     public void OnButtonClick()
     {
-        Debug.Log("Current player is: " + currentPlayer);
+        Debug.Log("Current player is: " + TicTacToeManager.Instance.currentPlayer);
         updateButtonDisplay();
-        // button.interactable = false;
+        TicTacToeManager.Instance.performMove();
+        button.interactable = false;
     }
     
     private void ActivatePrefab(GameObject prefabToActivate)
@@ -37,15 +37,13 @@ public class TileManager : MonoBehaviour
     // todo: Define Button Display Behavior
     public void updateButtonDisplay()
     {
-        if (currentPlayer == 'X')
+        if (TicTacToeManager.Instance.currentPlayer == 'X')
         {
             ActivatePrefab(xPrefab);
-            currentPlayer = 'O';
         }
         else
         {
             ActivatePrefab(oPrefab);
-            currentPlayer = 'X';
         }
     }
 }
