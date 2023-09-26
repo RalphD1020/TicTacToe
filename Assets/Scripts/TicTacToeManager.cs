@@ -35,6 +35,7 @@ public class TicTacToeManager : MonoBehaviour
             if (_numMoves >= 9)
             {
                 EndGame(TileState.Empty);
+                return;
             }
             SwitchPlayer();
             NotifyPlayerTurn();
