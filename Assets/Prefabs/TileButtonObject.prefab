@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 5237886728318727100}
   - component: {fileID: 6050913460881640147}
   m_Layer: 5
-  m_Name: Button
+  m_Name: TileButtonObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

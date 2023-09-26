@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public enum TileState {Empty, X, O}
-public class TileManager : MonoBehaviour
+public class Tile : MonoBehaviour
 {
     // Reference to the button
     public Button button;
@@ -22,7 +22,7 @@ public class TileManager : MonoBehaviour
         Debug.Log("Current player is: " + TicTacToeManager.Instance.currentPlayer);
         updateButtonDisplay();
         TicTacToeManager.Instance.performMove();
-        button.interactable = false;
+        // button.interactable = false;
     }
     
     private void ActivatePrefab(GameObject prefabToActivate)
