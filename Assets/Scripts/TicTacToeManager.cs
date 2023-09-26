@@ -25,7 +25,6 @@ public class TicTacToeManager : MonoBehaviour
     public void PerformMove(int tileIndex)
     {
         UpdateBoard(GetRowColumnFromIndex(tileIndex));
-        // todo: check victory
         if (VictoryAchieved())
         {
             _playerHasWon = true;
@@ -94,7 +93,6 @@ public class TicTacToeManager : MonoBehaviour
             Debug.Log("Winner: " + winner);
         }
         EditorApplication.isPlaying = false;
-        Application.Quit();
     }
 
     private void UpdateBoard((int row, int col) coordinates)
