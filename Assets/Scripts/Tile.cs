@@ -19,7 +19,6 @@ public class Tile : MonoBehaviour
     // Function that gets called when the button is clicked
     public void OnButtonClick()
     {
-        Debug.Log("Current player is: " + TicTacToeManager.Instance.currentPlayer);
         UpdateButtonDisplay();
         TicTacToeManager.Instance.PerformMove(int.Parse(button.name));
         button.interactable = false;

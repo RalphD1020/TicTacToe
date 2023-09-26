@@ -37,6 +37,7 @@ public class TicTacToeManager : MonoBehaviour
                 EndGame(TileState.Empty);
             }
             SwitchPlayer();
+            NotifyPlayerTurn();
         }
 
     }
@@ -108,6 +109,11 @@ public class TicTacToeManager : MonoBehaviour
             currentPlayer = TileState.X;
     }
     
+    private void NotifyPlayerTurn()
+    {
+        Debug.Log("Current player is: " + currentPlayer);
+    }
+    
     private static (int, int) GetRowColumnFromIndex(int tileIndex)
     {
         if (tileIndex is < 0 or > 8)
@@ -147,5 +153,6 @@ public class TicTacToeManager : MonoBehaviour
         
         // X goes first
         currentPlayer = TileState.X;
+        NotifyPlayerTurn();
     }
 }
