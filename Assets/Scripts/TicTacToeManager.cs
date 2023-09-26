@@ -6,7 +6,7 @@ public class TicTacToeManager : MonoBehaviour
     public static TicTacToeManager Instance;
 
     // Define a public field to represent the current player.
-    public char currentPlayer;
+    public TileState currentPlayer;
 
     // Start is called before the first frame update
     private void Start()
@@ -29,10 +29,10 @@ public class TicTacToeManager : MonoBehaviour
 
     private void switchPlayer()
     {
-        if (currentPlayer == 'X')
-            currentPlayer = 'O';
+        if (currentPlayer == TileState.X)
+            currentPlayer = TileState.O;
         else
-            currentPlayer = 'X';
+            currentPlayer = TileState.X;
     }
 
     private void initializeTicTacToeInstance()
@@ -51,6 +51,6 @@ public class TicTacToeManager : MonoBehaviour
     private void initializeGameState()
     {
         // X goes first
-        currentPlayer = 'X';
+        currentPlayer = TileState.X;
     }
 }

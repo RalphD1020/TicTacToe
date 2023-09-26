@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum TileState {Empty, X, O}
 public class TileManager : MonoBehaviour
 {
     // Reference to the button
@@ -8,7 +9,8 @@ public class TileManager : MonoBehaviour
     public GameObject emptyPrefab;
     public GameObject xPrefab;
     public GameObject oPrefab;
-    
+    public TileState State { get; set; }
+
     public void Start()
     {
         ActivatePrefab(emptyPrefab);
@@ -37,7 +39,7 @@ public class TileManager : MonoBehaviour
     // todo: Define Button Display Behavior
     public void updateButtonDisplay()
     {
-        if (TicTacToeManager.Instance.currentPlayer == 'X')
+        if (TicTacToeManager.Instance.currentPlayer == TileState.X)
         {
             ActivatePrefab(xPrefab);
         }
