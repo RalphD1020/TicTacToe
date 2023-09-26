@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour
     public void OnButtonClick()
     {
         Debug.Log("Current player is: " + TicTacToeManager.Instance.currentPlayer);
-        updateButtonDisplay();
+        UpdateButtonDisplay();
         TicTacToeManager.Instance.PerformMove(int.Parse(button.name));
         button.interactable = false;
     }
@@ -37,7 +37,7 @@ public class Tile : MonoBehaviour
     }
 
     // todo: Define Button Display Behavior
-    public void updateButtonDisplay()
+    private void UpdateButtonDisplay()
     {
         if (TicTacToeManager.Instance.currentPlayer == TileState.X)
         {
