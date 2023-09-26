@@ -21,8 +21,8 @@ public class Tile : MonoBehaviour
     {
         Debug.Log("Current player is: " + TicTacToeManager.Instance.currentPlayer);
         updateButtonDisplay();
-        TicTacToeManager.Instance.performMove();
-        // button.interactable = false;
+        TicTacToeManager.Instance.PerformMove(int.Parse(button.name));
+        button.interactable = false;
     }
     
     private void ActivatePrefab(GameObject prefabToActivate)
