@@ -1,2 +1,2 @@
 # TicTacToe
-Simple impl'
+Simple implementation of TicTacToe
