@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TicTacToeManager : MonoBehaviour
 {
-    private TileState[,] _board = new TileState[3, 3];
+    private readonly TileState[,] _board = new TileState[3, 3];
     private int _numMoves;
     private bool _playerHasWon;
     public static TicTacToeManager Instance;
@@ -112,9 +112,9 @@ public class TicTacToeManager : MonoBehaviour
     
     private static (int, int) GetRowColumnFromIndex(int tileIndex)
     {
-        if (tileIndex < 0 || tileIndex > 8)
+        if (tileIndex is < 0 or > 8)
         {
-            throw new ArgumentOutOfRangeException("tileIndex", "Index should be between 0 and 8");
+            throw new ArgumentOutOfRangeException(nameof(tileIndex), "Index should be between 0 and 8");
         }
 
         int row = tileIndex / 3;
