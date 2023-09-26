@@ -6,6 +6,7 @@ public class TicTacToeManager : MonoBehaviour
 {
     private TileState[,] _board = new TileState[3, 3];
     private int _numMoves = 0;
+    private bool playerHasWon = false;
     public static TicTacToeManager Instance;
     public TileState currentPlayer;
 
@@ -27,14 +28,18 @@ public class TicTacToeManager : MonoBehaviour
         // todo: check victory
         if (victoryAchieved())
         {
+            playerHasWon = true;
             endGame(currentPlayer);
         }
-        _numMoves++;
-        if (_numMoves >= 9)
-        {
-            endGame(TileState.Empty);
+        if (!playerHasWon) {
+            
+            _numMoves++;
+            if (_numMoves >= 9)
+            {
+                endGame(TileState.Empty);
+            }
+            switchPlayer();
         }
-        switchPlayer();
 
     }
 
@@ -81,7 +86,7 @@ public class TicTacToeManager : MonoBehaviour
 
     private void endGame(TileState winner)
     {
-        if (winner == TileState.Empty)
+        if (winner == TileState.Empty && !playerHasWon)
         {
             Debug.Log("DRAW");
         }
