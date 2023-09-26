@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TicTacToeTile : MonoBehaviour
+public class TileManager : MonoBehaviour
 {
     // Reference to the button
     public Button button;
